@@ -146,7 +146,9 @@ public class Bird : MonoBehaviour
         _rigidbody2d.position = _startPosition;
         _rigidbody2d.isKinematic = true;
         _rigidbody2d.velocity = Vector2.zero;
-        _isResetting = false;
         _shot = false;
+
+        yield return null;
+        _isResetting = false;
     }
 }
