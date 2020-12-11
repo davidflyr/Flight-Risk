@@ -31,11 +31,19 @@ public class Bird : MonoBehaviour
 
     public bool IsDragging { get; private set; }
 
+    FocusObject[] _focusObjects;
+
+
     void Awake()
     {
         _rigidbody2d = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _anim = GetComponent<Animator>();
+    }
+
+    void OnEnable()
+    {
+        _focusObjects = FindObjectsOfType<FocusObject>();
     }
 
     // Start is called before the first frame update
@@ -135,13 +143,30 @@ public class Bird : MonoBehaviour
             StartCoroutine(ResetAfterDelay());
     }
 
+    bool Waiting()
+    {
+        foreach (FocusObject focusObject in _focusObjects)
+        {
+            if (focusObject._waiting)
+            {
+                Debug.Log(focusObject.gameObject.name + "is Waiting");
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     IEnumerator ResetAfterDelay()
     {
         _isResetting = true;
         _state = State.notFlying;
         _isBoosting = false;
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
+
+        while (Waiting())
+            yield return null;
 
         _rigidbody2d.position = _startPosition;
         _rigidbody2d.isKinematic = true;

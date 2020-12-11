@@ -5,7 +5,7 @@ using UnityEngine;
 
 [SelectionBase]
 
-public class Monster : MonoBehaviour
+public class Monster : FocusObject
 {
     [SerializeField] Sprite _deadSprite;
     [SerializeField] ParticleSystem _particleSystem;
@@ -40,6 +40,7 @@ public class Monster : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = _deadSprite;
         _particleSystem.Play();
         yield return new WaitForSeconds(1);
+        _waiting = false;
         gameObject.SetActive(false);
     }
 }
