@@ -19,6 +19,8 @@ public class Bird : MonoBehaviour
     SpriteRenderer _spriteRenderer;
     Animator _anim;
 
+    Canvas _canvas;
+
     enum State {
         flying, notFlying
     }
@@ -44,6 +46,7 @@ public class Bird : MonoBehaviour
     void OnEnable()
     {
         _focusObjects = FindObjectsOfType<FocusObject>();
+        _canvas = FindObjectOfType<Canvas>();
     }
 
     // Start is called before the first frame update
@@ -99,6 +102,9 @@ public class Bird : MonoBehaviour
     {
         if (_shot)
             return;
+
+        if (_canvas != null && _canvas.isActiveAndEnabled)
+            _canvas.gameObject.SetActive(false);
 
         Vector2 currentPosition = _rigidbody2d.position;
         Vector2 direction = _startPosition - currentPosition;
