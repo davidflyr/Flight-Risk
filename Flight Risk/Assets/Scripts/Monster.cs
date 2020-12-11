@@ -24,11 +24,10 @@ public class Monster : FocusObject
         if (_hasDied)
             return false;
 
-        if (collision.contacts[0].normal.y < -0.5 && collision.gameObject.tag == "Heavy")
+        if (collision.contacts[0].normal.y < -0.5)
             return true;
 
-        if (collision.contacts[0].relativeVelocity.x > _hitTolerance ||
-            collision.contacts[0].relativeVelocity.y > _hitTolerance)
+        if (collision.contacts[0].relativeVelocity.magnitude > _hitTolerance)
             return true;
 
         return false;
