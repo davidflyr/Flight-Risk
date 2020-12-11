@@ -155,7 +155,6 @@ public class Bird : MonoBehaviour
         {
             if (focusObject._waiting)
             {
-                Debug.Log(focusObject.gameObject.name + "is Waiting");
                 return true;
             }
         }

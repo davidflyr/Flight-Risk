@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 27485242}
   - component: {fileID: 27485241}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Instruction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,8 +191,8 @@ Canvas:
   m_GameObject: {fileID: 27485240}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 2
+  m_Camera: {fileID: 75159928}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -212,7 +212,7 @@ RectTransform:
   m_GameObject: {fileID: 27485240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 636056108}
   m_Father: {fileID: 0}
@@ -220,9 +220,15 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -39.437, y: -0.775}
+  m_SizeDelta: {x: 7.7199373, y: 4.9091377}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!20 &75159928 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2647678370365942766, guid: 835ebb221f3ce4c408864a2d6e890ba7,
+    type: 3}
+  m_PrefabInstance: {fileID: 953043310}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &191746065
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,8 +1245,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0.22, y: -0.392, z: 29.286}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 127.5, y: 162}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 2.8715606, y: 1.8416615}
+  m_SizeDelta: {x: 6.5584297, y: 0.6021323}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &636056109
 MonoBehaviour:
@@ -1289,8 +1295,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 0.8
+  m_fontSizeBase: 0.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1325,7 +1331,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -44.75125, y: 41.241974, z: -78.446594, w: -38.358185}
+  m_margin: {x: 0.9094753, y: -0.45996094, z: -1.0817833, w: -0.6422272}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
