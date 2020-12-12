@@ -2881,7 +2881,7 @@ PrefabInstance:
     - target: {fileID: 3216713602321172276, guid: c7d650331db874ad898656fbbc57c9f3,
         type: 3}
       propertyPath: _nextLevelName
-      value: Level1
+      value: EndScreen
       objectReference: {fileID: 0}
     - target: {fileID: 3216713602321172277, guid: c7d650331db874ad898656fbbc57c9f3,
         type: 3}
