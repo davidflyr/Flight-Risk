@@ -10,6 +10,9 @@ public class Bird : MonoBehaviour
     [SerializeField] float _maxDragDistance = 3.5f;
     [SerializeField] float _boost = 0.2f;
 
+    [SerializeField] float _flapSpeedMult = 1.5f;
+    float _setAnimSpeed = 1.0f;
+
     [SerializeField] GameObject _rightLimit;
     [SerializeField] GameObject _upperLimit;
     float _xLimit;
@@ -63,7 +66,11 @@ public class Bird : MonoBehaviour
     void Update()
     {
         if (_shot && !_isResetting)
+        {
             _isBoosting = ListenForBoost();
+            _setAnimSpeed = _isBoosting ? _flapSpeedMult : 1f;
+            _anim.SetFloat("speed", _setAnimSpeed);
+        }
 
         if ((transform.position.x > _xLimit || transform.position.y > _yLimit) && !_isResetting)
             StartCoroutine(ResetAfterDelay());
@@ -168,7 +175,7 @@ public class Bird : MonoBehaviour
         _state = State.notFlying;
         _isBoosting = false;
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
 
         while (Waiting())
             yield return null;
