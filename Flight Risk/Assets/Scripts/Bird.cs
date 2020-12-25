@@ -22,7 +22,8 @@ public class Bird : MonoBehaviour
     SpriteRenderer _spriteRenderer;
     Animator _anim;
 
-    Canvas _canvas;
+    [SerializeField] Canvas _canvas;
+    [SerializeField] Canvas _canvas2;
 
     enum State {
         flying, notFlying
@@ -49,7 +50,6 @@ public class Bird : MonoBehaviour
     void OnEnable()
     {
         _focusObjects = FindObjectsOfType<FocusObject>();
-        _canvas = FindObjectOfType<Canvas>();
     }
 
     // Start is called before the first frame update
@@ -171,6 +171,8 @@ public class Bird : MonoBehaviour
 
     IEnumerator ResetAfterDelay()
     {
+        if (_canvas2 != null && _canvas2.isActiveAndEnabled)
+            _canvas2.gameObject.SetActive(false);
         _isResetting = true;
         _state = State.notFlying;
         _isBoosting = false;

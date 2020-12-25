@@ -3178,6 +3178,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4319172544243871211, guid: 500ddd14404e74d089fa025e1ad20969,
         type: 3}
+      propertyPath: _canvas
+      value: 
+      objectReference: {fileID: 27485243}
+    - target: {fileID: 4319172544243871211, guid: 500ddd14404e74d089fa025e1ad20969,
+        type: 3}
       propertyPath: _rightLimit
       value: 
       objectReference: {fileID: 922002127}
